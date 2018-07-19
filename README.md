@@ -1,7 +1,7 @@
 # bgzl - cross-platform Bugzilla client
 
-bgzl is a collection of classes for working with [Bugzilla](https://bugzilla.org)
+bgzl is a collection of client applications for working with [Bugzilla](https://bugzilla.org)
 
-It's written in Kotlin. Android and macOS clients are planned.
+Business logic is written in Kotlin. Android and macOS support is planned.
 
 Under construction
