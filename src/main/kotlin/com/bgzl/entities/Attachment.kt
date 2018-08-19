@@ -70,48 +70,7 @@ data class Attachment(
     val creator: String,
 
     /**
-     * Array of objects, each containing the information about the flag currently set for each attachment.
+     * List of flags currently set for each attachment.
      */
-    val flags: Array<Flag>
-) {
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other == null || this::class != other::class) return false
-
-        other as Attachment
-
-        if (id != other.id) return false
-        if (bugId != other.bugId) return false
-        if (data != other.data) return false
-        if (size != other.size) return false
-        if (fileName != other.fileName) return false
-        if (summary != other.summary) return false
-        if (creationTime != other.creationTime) return false
-        if (lastChangeTime != other.lastChangeTime) return false
-        if (private != other.private) return false
-        if (obsolete != other.obsolete) return false
-        if (patch != other.patch) return false
-        if (creator != other.creator) return false
-        if (!flags.contentDeepEquals(other.flags)) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = id
-        result = 31 * result + bugId
-        result = 31 * result + data.hashCode()
-        result = 31 * result + size
-        result = 31 * result + fileName.hashCode()
-        result = 31 * result + summary.hashCode()
-        result = 31 * result + creationTime.hashCode()
-        result = 31 * result + lastChangeTime.hashCode()
-        result = 31 * result + private.hashCode()
-        result = 31 * result + obsolete.hashCode()
-        result = 31 * result + patch.hashCode()
-        result = 31 * result + creator.hashCode()
-        result = 31 * result + flags.contentDeepHashCode()
-
-        return result
-    }
-}
+    val flags: List<Flag>
+)
